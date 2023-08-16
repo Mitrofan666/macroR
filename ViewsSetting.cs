@@ -24,14 +24,27 @@ namespace view
 			Document doc = this.ActiveUIDocument.Document;
 			List<View> allViews = new List<View>();
 			
+			List<Space> vievSpace = new FilteredElementCollector(doc, doc.ActiveView.Id)
+				.OfClass(typeof(Space))
+				.Cast<Space>()
+				.ToList();
+			
+			foreach(Space currentSpase in vievSpace)
+			{
+				string nameCurrentSpase = currentSpase.Name;
+			}
+			
+			//
+			
 			List<ViewPlan> viewPlans = new FilteredElementCollector(doc, doc.ActiveView.Id)  //ActiveView выполняется
 				.OfClass(typeof(ViewPlan))
 				.Cast<ViewPlan>()  // .Where(Grid => !Grid.Name.Contains("/"))
 				.ToList();
 			foreach(View V in viewPlans)
 			{
-				string print = V.Name;
-				TaskDialog.Show("Info", print);
+				string currentNameView = V.Name;
+				TaskDialog.Show("Info", currentNameView);
+				
 			}
 
 //			using(Transaction t = new Transaction(doc))
