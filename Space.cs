@@ -23,7 +23,7 @@ namespace Space
 		{
 			try
 			{
-					// Get the active document
+				// Get the active document
 	            Document doc = this.ActiveUIDocument.Document;
 	
 	            // Get all views in the document
